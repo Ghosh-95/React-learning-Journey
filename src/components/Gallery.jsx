@@ -3,11 +3,10 @@ import { sculptureList } from '../utils/utilities';
 
 
 export default function Gallery() {
-    let index = 0;
+    const [index, setIndex] = useState(0)
 
     function handleClick() {
-        index = index + 1;
-        return index;
+        setIndex(index + 1);
     };
 
     let sculpture = sculptureList[index];
