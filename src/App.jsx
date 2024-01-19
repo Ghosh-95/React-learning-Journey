@@ -15,12 +15,18 @@ function UploadButton({ onUpload }) {
   )
 };
 
+function Toolbar({ children }) {
+  return (
+    <div onClick={() => alert('Toolbar got clicked')}>{children}</div>
+  )
+}
+
 function App() {
   return (
-    <>
+    <Toolbar>
       <PlayingButton onPlay={() => alert('Playing')} />
       <UploadButton onUpload={() => alert('Uploading')} />
-    </>
+    </Toolbar>
   )
 }
 
