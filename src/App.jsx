@@ -3,23 +3,23 @@ import Profile from './components/Profle';
 import Button from './components/Button';
 import './App.css'
 
-function PlayingButton() {
+function PlayingButton({ onPlay }) {
   return (
-    <Button eventHandler={() => alert('Playing')}>Play</Button>
+    <Button eventHandler={onPlay}>Play</Button>
   )
 };
 
-function UploadButton() {
+function UploadButton({ onUpload }) {
   return (
-    <Button eventHandler={() => alert('Uploading')}>Upload</Button>
+    <Button eventHandler={onUpload}>Upload</Button>
   )
 };
 
 function App() {
   return (
     <>
-      <PlayingButton />
-      <UploadButton />
+      <PlayingButton onPlay={() => alert('Playing')} />
+      <UploadButton onUpload={() => alert('Uploading')} />
     </>
   )
 }
