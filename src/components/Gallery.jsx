@@ -4,10 +4,15 @@ import { sculptureList } from '../utils/utilities';
 
 export default function Gallery() {
     const [index, setIndex] = useState(0)
+    const [showMore, setShowMore] = useState(false);
 
     function handleClick() {
         setIndex(index + 1);
     };
+
+    function hideAndShow() {
+        setShowMore(!showMore);
+    }
 
     let sculpture = sculptureList[index];
 
@@ -20,9 +25,11 @@ export default function Gallery() {
 
             <h3>{index + 1} of {sculptureList.length}</h3>
 
+            <button onClick={hideAndShow} style={{ display: 'block', margin: '1rem auto' }}>{showMore ? 'Hide' : 'Show'} Details</button>
+
             <img src={sculpture.url} alt={sculpture.alt} />
 
-            <p>{sculpture.description}</p>
+            {showMore && <p>{sculpture.description}</p>}
         </>
     );
 };
