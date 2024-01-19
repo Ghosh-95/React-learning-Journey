@@ -1,9 +1,8 @@
-export default function Button() {
-    const buttonHandler = () => alert('Button two clicked');
+export default function Button({ eventHandler, children }) {
+
     return (
         <>
-            <button onClick={() => alert('Button one Clicked')} style={{ marginRight: '1rem' }}>Click Me</button>
-            <button onClick={buttonHandler}>Click Me 🚀</button>
+            <button onClick={eventHandler}>{children}</button>
         </>
     )
 }
