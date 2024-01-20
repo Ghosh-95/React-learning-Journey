@@ -1,6 +1,6 @@
 # React 
 
-Learn More at <a href="https://react.dev/">React.dev</a>
+Learn More at [React.dev](https://react.dev/)
 
 ## Practicing and Learning React.js
 
@@ -9,16 +9,16 @@ Learn More at <a href="https://react.dev/">React.dev</a>
 1. Used `Props` to communicate between components. It's called *Passing a Props to a Component*. You can pass an JavaScript value through props including object, array and functions. We can give props to a component in two steps:
     -  `Passing props to Child Component`: Pass the props to Child Component is similar to giving attributes in a JSX markups. We can pass any value as props.
 
-        ~~~
+        ```javascript
         export default function Profile(){
             return (
                 <Avatar person={{personName: "Nikola Tesla", job: "Inventor"}} species="Superhuman" />
             );
         }
-        ~~~
+        ```
         Now we can read the props inside Avatar component. All the props we passed into the Avatar componet will create an object.
     - `Read the props inside the Child Component`: We can access the props object from function parameter. We can destructure them for better conciseness:
-        ~~~
+        ```javascript
         function Avatar({person, species}) {
             const {personName, job} = person;
             return (
@@ -29,11 +29,11 @@ Learn More at <a href="https://react.dev/">React.dev</a>
                 </>
             );
         };
-        ~~~
+        ```
 
 2. A browser has many inbuilt events like `keydown, click, change, doubleclick, scroll` and we can manipulate them with JavaScript using event listeners. In React, there are similar apprach to handle events inside JSX.
     - To add event handler, define a function and pass it as prop to the appropriate JSX tag.
-        ~~~
+        ```javascript
         export default function Button() {
             function handleClick() {
                     alert('You clicked me!');
@@ -46,18 +46,18 @@ Learn More at <a href="https://react.dev/">React.dev</a>
             );
         }
 
-        ~~~
+        ```
 
         You defined the handleClick function and then passed it as a prop to `<button>`.  `handleClick` is an event handler. Event handler functions:
 
-        - Are usually defined inside your components.
-        - Have names that start with handle(by convention), followed by the name of the event.
+         - Are usually defined inside your components.
+         - Have names that start with handle(by convention), followed by the name of the event.
 
         We should not call he handler function inside JSX. That would lead to immediate invokation of the handler function. But we want React to remember the handler function and call it when the event occurs. When the `click` event happens React will call the function.
 
     - Because event handlers are declared inside of a component, they have access to the component’s props. We can read them inside component:
 
-        ~~~
+        ```javascript
         function Button({ message, children }) {
             return (
                 <button onClick={() => alert(message)}>
@@ -80,9 +80,9 @@ Learn More at <a href="https://react.dev/">React.dev</a>
             );
         }
 
-        ~~~
+        ```
     - We can even pass the event handlers as props:
-        ~~~
+        ```javascript
         function PlayButton({ movieName }) {
             function handlePlay() {
                 alert(`Playing ${movieName}!`);
@@ -103,7 +103,7 @@ Learn More at <a href="https://react.dev/">React.dev</a>
             );
         };
 
-        ~~~
+        ```
         Here the Toolbar compoenent renders a `PlayButton`. `PlayButton` passes `handlePlay` as `onClick` prop inside `Button`. Finally `Button` accepts the prop and pass on as onClick event handler.
 
 
@@ -116,11 +116,11 @@ Learn More at <a href="https://react.dev/">React.dev</a>
      - Triger re-rendering the component with new data.
     
    The `useState` hook provides exactly these two things:
-   ~~~
+   ```javascript
     import {useState} from 'react';
 
    const [state, setState] = useState(0);
-   ~~~
+    ```
     *useState hook provides an array that always has two items, we destructure that array and use them.*
      - `state` variable to retain the data between renders.
      - A state setter function to update the variable and trigger React to render the component again.
@@ -129,7 +129,10 @@ Learn More at <a href="https://react.dev/">React.dev</a>
 
    In React, useState, as well as any other function starting with “use”, is called a Hook.
 
-    `Anatomy`: const [index, setIndex] = useState(0);
+    `Anatomy`:    
+    ```javascript
+    const [index, setIndex] = useState(0); 
+    ```
       - In this case, you want React to remember `index`.
       - The only argument to useState is the initial value of your state variable. In this example, the index’s initial value is set to 0 with `useState(0)`.
      
