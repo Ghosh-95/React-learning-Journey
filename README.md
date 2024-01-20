@@ -127,6 +127,8 @@ Learn More at [React.dev](https://react.dev/)
     
     `Hooks` are special functions that are only available while React is rendering. They let you “hook into” different React features.
 
+    > Hooks can only be called at the top-level of components. They can't be called inside loops, conditions or any other functions.
+
    In React, useState, as well as any other function starting with “use”, is called a Hook.
 
     `Anatomy`:    
