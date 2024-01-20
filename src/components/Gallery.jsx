@@ -6,8 +6,11 @@ export default function Gallery() {
     const [index, setIndex] = useState(0)
     const [showMore, setShowMore] = useState(false);
 
+    const hasPrev = index > 0;
+    const hasNext = index < sculptureList.length - 1;
+
     function handleNextClick() {
-        setIndex(index + 1);
+        if (hasNext) setIndex(index + 1);
     };
 
     function hideAndShow() {
@@ -15,16 +18,15 @@ export default function Gallery() {
     }
 
     function handlePrevClick() {
-        setIndex(index - 1);
+        if (hasPrev) setIndex(index - 1);
     }
 
     let sculpture = sculptureList[index];
-    console.log(sculptureList.length, index);
 
     return (
         <>
-            {index < sculptureList.length - 1 ? <button onClick={handleNextClick}>Next</button> : ""}
-            {index > 0 ? <button onClick={handlePrevClick}>Previous</button> : ""}
+            <button disabled={!hasNext} onClick={handleNextClick}>Next</button>
+            <button disabled={!hasPrev} onClick={handlePrevClick}>Previous</button>
             <h2>
                 <i>{sculpture.name}</i> by {sculpture.artist}
             </h2>
