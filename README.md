@@ -143,7 +143,7 @@ Learn More at [React.dev](https://react.dev/)
 4. What is reconciliation?
 Reconciliation is the algorithm React uses to diff one tree with another to determine which parts need to be changed.
 `update`: A change in the data used to render a React app. Usually the result of `setState` (state setter function). Eventually results in a re-render.
-The central idea of React's API is to think of updates as if they cause the entire app to re-render. This allows the developer to reason declaratively, rather than worry about how to efficiently transition the app from any particular state to another (A to B, B to C, C to A, and so on).
+The central idea of React's API is to think of updates as if they cause the entire app to re-render.
 
 Actually re-rendering the entire app on each change only works for the most trivial apps; in a real-world app, it's costly in terms of performance. React has optimizations which create the appearance of whole app re-rendering while maintaining great performance. The bulk of these optimizations are part of a process called reconciliation.
 
