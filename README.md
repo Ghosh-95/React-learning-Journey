@@ -139,3 +139,5 @@ Learn More at [React.dev](https://react.dev/)
       - The only argument to useState is the initial value of your state variable. In this example, the index’s initial value is set to 0 with `useState(0)`.
      
     `State` is isolated and private. State is local to a component instance on the screen. In other words, if you render the same component twice, each copy will have completely isolated state! Changing one of them will not affect the other.
+
+    
