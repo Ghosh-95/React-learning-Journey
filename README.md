@@ -177,10 +177,23 @@ Learn More at [React.dev](https://react.dev/)
     Even though you called `setNumber(number + 1)` three times, in this render’s event handler number is always 0, so you set the state to 1 three times. This is why, after your event handler finishes, React re-renders the component with number equal to 1 rather than 3.
 
     Since the number state variable is 0 for this render, its event hanler looks like this:
-    ```js
+
+    ```javascript
     <button onClick={() => {
     setNumber(0 + 1);
     setNumber(0 + 1);
     setNumber(0 + 1);
     }}>+3</button>
     ```
+
+4 . `useEffect()`: It is a React hook that lets you synchronize a component with an external system.
+
+>An external system is the piece of codes that are not controlled by React.
+
+~~~javascript
+useEffect(setup f, dependencies?)
+~~~
+
+- `setup`: The function with useEffect logic. This setup function may also returns a cleanup function. When the component is added to DOM, React will call the setup function.
+
+- `dependencies`: List of all the reactive values that are used inside setup function. This is an array that may include props, state, and all the variables and functions declared/used inside setup function.
