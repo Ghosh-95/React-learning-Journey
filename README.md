@@ -197,3 +197,12 @@ useEffect(setup f, dependencies?)
 - `setup`: The function with useEffect logic. This setup function may also returns a cleanup function. When the component is added to DOM, React will call the setup function.
 
 - `dependencies`: List of all the reactive values that are used inside setup function. This is an array that may include props, state, and all the variables and functions declared/used inside setup function.
+
+### Lifting the State Up
+
+Sometimes, you want the state of two components to always change together. To do it efficiently, remove state from both of them, move it to their closest common parent, and then pass it down to childrens via props. This is known as **lifting state up**.
+> An Accordion would be an example of lifting state up.
+
+### Props Drilling
+
+But passing props down to children from parents can be troublesome and repeatative. if you have to pass them through many components in the middle, or if many component need the same information, State Lifting becomes inconvenient. The nearest common ancestor could have far removed from the components that need data, and here lifting the state that **high** can led to a situation called `Props Drilling`.
