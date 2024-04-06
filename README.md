@@ -206,3 +206,39 @@ Sometimes, you want the state of two components to always change together. To do
 ### Props Drilling
 
 But passing props down to children from parents can be troublesome and repeatative. if you have to pass them through many components in the middle, or if many component need the same information, State Lifting becomes inconvenient. The nearest common ancestor could have far removed from the components that need data, and here lifting the state that **high** can led to a situation called `Props Drilling`.
+
+### UseContext():
+
+To avoid the inconvenience of props drilling, we use `useContext` **hook** to send data anywhere possible in the entire codebase.
+
+To use the context value all over the app, use `<contextName.Provider>` to wrap around the whole application.
+```js
+<MyContext.Provider>
+    <App />
+</MyContext.Provider>
+```
+We can pass new value to the **Provider** as props to update the value:
+```js
+<MyContext.Provider value={newContextValue}>
+
+    {/*All the code goes here*/}
+
+</MyContext.Provider>
+```
+You can wrap differnt component with different context provider:
+```js
+<MyContext.Provider>
+    <MyContext.Provider>
+        <Header />
+    </MyContext.Provider>
+    <App />
+</MyContext.Provider>
+```
+
+
+- In class based components use `<contextName.Consumer>` to update the context value. Inside this JSX there should be a callback function that has access to the context value that useContext provides.
+    ```js
+    <MyContext.Consumer>
+        {(data) => <p>{data}</p>}
+    </MyContext.Consumer>
+    ```
