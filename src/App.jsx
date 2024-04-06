@@ -13,15 +13,17 @@ import { userContext } from './utils/utilities';
 
 
 function App() {
-  const [userName, setUserName] = useState(useContext(userContext));
+  const [userName, setUserName] = useState(useContext(userContext).userName);
 
   useEffect(() => {
-    const userName = "Sushovan";
-    setUserName(userName);
+    const userName = {
+      name: "Sushovan",
+    };
+    setUserName(userName.name);
   }, [])
 
   return (
-    <userContext.Provider value={userName}>
+    <userContext.Provider value={{ userName: userName, setUserName }}>
       <Header />
       <Outlet />
     </userContext.Provider>
