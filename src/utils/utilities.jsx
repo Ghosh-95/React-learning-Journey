@@ -1,3 +1,5 @@
+import { createContext } from "react";
+
 export const sculptureList = [{
     name: 'Homenaje a la Neurocirugía',
     artist: 'Marta Colvin Andrade',
@@ -23,3 +25,6 @@ export const sculptureList = [{
     url: 'https://i.imgur.com/RCwLEoQm.jpg',
     alt: 'Three monumental stone busts with the heads that are disproportionately large with somber faces.'
 }];
+
+
+export const userContext = createContext("Sushovan Ghosh");
