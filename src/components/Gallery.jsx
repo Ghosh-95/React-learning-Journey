@@ -3,7 +3,7 @@ import { sculptureList, userContext } from '../utils/utilities';
 
 
 export default function Gallery() {
-    const user = useContext(userContext);
+    const { userName } = useContext(userContext);
     const [index, setIndex] = useState(0)
     const [showMore, setShowMore] = useState(false);
 
@@ -41,7 +41,7 @@ export default function Gallery() {
             {showMore && <p>{sculpture.description}</p>}
 
             <div>
-                <p style={{ marginTop: '3rem' }}>{user}</p>
+                <p style={{ marginTop: '3rem' }}>{userName}</p>
             </div>
         </>
     );

@@ -13,7 +13,7 @@ function Panel({ children, title, isActive, onShow }) {
 }
 
 export default function Accordion() {
-    const user = useContext(userContext);
+    const { userName } = useContext(userContext);
     const [activeIndex, setActiveIndex] = useState(0);
     return (
         <>
@@ -35,7 +35,7 @@ export default function Accordion() {
             </section>
 
             <p style={{ marginTop: '3rem' }}>
-                {user}
+                {userName}
             </p>
         </>
     )

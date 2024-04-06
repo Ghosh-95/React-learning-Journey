@@ -27,4 +27,6 @@ export const sculptureList = [{
 }];
 
 
-export const userContext = createContext("Sushovan Ghosh");
+export const userContext = createContext({
+    userName: "default name",
+});
