@@ -13,6 +13,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -28,6 +34,17 @@ body {
   display: flex;
   min-width: 320px;
   min-height: 100vh;
+}
+
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background: #fff;
+  color: #000;
+  font-weight: bold;
+  padding: 1rem;
 }
 
 h1 {
